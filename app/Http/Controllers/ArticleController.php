@@ -26,11 +26,8 @@ class ArticleController extends Controller
         $articles = $this->articleRepository
             ->getPublishedArticlesQuery()
             ->limit($limit)
-            ->offset($offset);
-
-//        dd($articles->toSql());
-
-        $articles = $articles->get();
+            ->offset($offset)
+            ->get();
 
         return response()->json(ArticleListResource::collection($articles));
     }
