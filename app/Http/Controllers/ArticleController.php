@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Comment;
 use App\Http\Resources\ArticleItemResource;
 use App\Http\Resources\ArticleListResource;
 use App\Repositories\ArticleRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class ArticleController extends Controller
 {

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Repositories\UserRepository;
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
@@ -10,7 +11,7 @@ class Comment extends Model
         'body',
     ];
 
-    protected $with = [
+    protected $appends = [
         'user'
     ];
 
@@ -23,5 +24,10 @@ class Comment extends Model
     public function article()
     {
         return $this->belongsTo(Article::class);
+    }
+
+    public function getUserAttribute()
+    {
+        return UserRepository::getUserById($this->user_id);
     }
 }
