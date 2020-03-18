@@ -14,7 +14,8 @@ class AddIndexesToCommentsTable extends Migration
     public function up()
     {
         Schema::table('comments', function (Blueprint $table) {
-            $table->index(['article_id', 'user_id']);
+            $table->index('article_id');
+            $table->index('user_id');
         });
     }
 

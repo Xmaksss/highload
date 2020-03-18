@@ -2,8 +2,14 @@
 
 namespace App\Http\Resources;
 
+use App\Article;
 use Illuminate\Http\Resources\Json\JsonResource;
 
+/**
+ * Class ArticleListResource
+ * @mixin Article
+ * @package App\Http\Resources
+ */
 class ArticleListResource extends JsonResource
 {
     /**
