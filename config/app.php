@@ -166,6 +166,8 @@ return [
          * Package Service Providers...
          */
 
+        \Spatie\Varnish\VarnishServiceProvider::class,
+
         /*
          * Application Service Providers...
          */

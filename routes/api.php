@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::apiResource('article', 'ArticleController')
-    ->only(['index', 'show']);
+Route::get('article/step1', 'ArticleController@indexStep1');
+Route::get('article/step2', 'ArticleController@indexStep2');
+Route::get('article/step3', 'ArticleController@indexStep3');
+Route::get('article/step4', 'ArticleController@indexStep4');

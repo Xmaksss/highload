@@ -2,8 +2,14 @@
 
 namespace App\Http\Resources;
 
+use App\Article;
 use Illuminate\Http\Resources\Json\JsonResource;
 
+/**
+ * Class ArticleListResource
+ * @mixin Article
+ * @package App\Http\Resources
+ */
 class ArticleListResource extends JsonResource
 {
     /**
@@ -19,7 +25,7 @@ class ArticleListResource extends JsonResource
             'title' => $this->title,
             'published_at' => $this->published_at,
             'preview' => $this->preview,
-            'last_comment' => $this->last_comment
+            'last_comment' => new CommentItemResource($this->last_comment)
         ];
     }
 }
